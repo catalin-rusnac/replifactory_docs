@@ -1,7 +1,7 @@
 Calibration
 ===========
 
-Enter calibration mode by toggling the switch in the corner of the page.
+Enter calibration mode by toggling the switch in the top right corner of the Device page.
 
 Pump Calibration
 ----------------
