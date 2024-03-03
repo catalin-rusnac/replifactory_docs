@@ -17,6 +17,7 @@ extensions = []
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+html_baseurl = 'https://catalin-rusnac.github.io/replifactory_docs/'
 
 
 # -- Options for HTML output -------------------------------------------------
