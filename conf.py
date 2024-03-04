@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'replifactory'
-copyright = '2023, Catalin Rusnac'
+copyright = '2024, Catalin Rusnac'
 author = 'Catalin Rusnac'
 
 # -- General configuration ---------------------------------------------------
@@ -23,7 +23,7 @@ html_baseurl = 'https://catalin-rusnac.github.io/replifactory_docs/'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
 
 master_doc = 'index'

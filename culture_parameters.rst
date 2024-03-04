@@ -1,7 +1,9 @@
-Culture Parameters
-==================
+Parameters Overview
+===================
+Detailed description of parameters that affect the culture progression.
 
-Below is an explanation of each culture parameter:
+For additional context see code: https://github.com/catalin-rusnac/replifactory_v7/blob/8f6c9f53e9cad99ae9882efa9e85b5c954117158/flask_app/experiment/culture.py#L330C9-L330C15
+
 
 .. tip::
 

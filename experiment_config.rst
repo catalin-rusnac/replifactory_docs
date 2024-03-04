@@ -1,14 +1,9 @@
-Experiment
-==========
-
-
----------------------------
-Setting Up a New Experiment
----------------------------
+Experiment Setup
+================
 
 Firstly, navigate to the 'Experiment' tab and either select an existing experiment or create a new one. Creating a new experiment will duplicate the parameters of the current experiment. If you want to start a new experiment with the default parameters, choose "default template" from the drop-down menu.
 
-Preparation of Growth Medium Bottles
+Stock Bottles
 ------------------------------------
 
 Install the growth medium bottles with aseptic technique. It is crucial to be aware of airflow and maintain sterility during this process. Consider your hands as potential contamination sources - imagine they are covered in glitter that you don't want to enter the bottle.
