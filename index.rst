@@ -1,5 +1,5 @@
 **replifactory**: a multiplexed, automated, and scalable platform for continuous evolution experiments
-==========================================
+======================================================================================================
 
 .. toctree::
    :maxdepth: 3

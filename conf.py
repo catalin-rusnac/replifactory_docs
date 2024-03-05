@@ -25,5 +25,6 @@ html_baseurl = 'https://catalin-rusnac.github.io/replifactory_docs/'
 
 html_theme = 'sphinx_book_theme'
 html_static_path = ['_static']
+html_theme_options = {"navigation_with_keys":False}
 
 master_doc = 'index'
