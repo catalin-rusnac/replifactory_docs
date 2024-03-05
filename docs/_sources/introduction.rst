@@ -2,7 +2,7 @@ Introduction
 ============
 
 ---------------------------
-What is replifactory?
+What is Replifactory?
 ---------------------------
 
 A 7-vial culture device with integrated stirring and OD measurement.
