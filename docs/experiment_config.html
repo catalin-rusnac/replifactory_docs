@@ -8,43 +8,43 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Experiment Setup &#8212; replifactory  documentation</title>
+    <title>Experiment Setup Guide &#8212; replifactory  documentation</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'experiment_config';</script>
     <link rel="canonical" href="https://catalin-rusnac.github.io/replifactory_docs/experiment_config.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Parameters Overview" href="culture_parameters.html" />
+    <link rel="next" title="Culture Control Parameters" href="culture_parameters.html" />
     <link rel="prev" title="Device Calibration" href="calibration.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -55,27 +55,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -97,8 +93,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -122,6 +123,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="index.html">
   
@@ -137,7 +140,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -150,9 +153,9 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="calibration.html">Device Calibration</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Experiment Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="culture_parameters.html">Parameters Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="problems_solutions.html">Problems and Solutions</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Experiment Setup Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="culture_parameters.html">Culture Control Parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="problems_solutions.html">Troubleshooting</a></li>
 </ul>
 
     </div>
@@ -168,7 +171,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -177,14 +180,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -262,10 +265,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -273,14 +276,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -291,7 +294,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Experiment Setup</h1>
+    <h1>Experiment Setup Guide</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -301,10 +304,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stock-bottles">Stock Bottles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup">Initial Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stock-bottles-preparation">Stock Bottles Preparation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priming-the-tubing">Priming the Tubing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filling-the-vials">Filling the Vials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-experiment-parameters">Setting Up Experiment Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-experiment">Starting the Experiment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-the-experiment">Monitoring the Experiment</a></li>
 </ul>
             </nav>
         </div>
@@ -316,64 +321,71 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="experiment-setup">
-<h1>Experiment Setup<a class="headerlink" href="#experiment-setup" title="Link to this heading">#</a></h1>
-<p>Firstly, navigate to the ‘Experiment’ tab and either select an existing experiment or create a new one. Creating a new experiment will duplicate the parameters of the current experiment. If you want to start a new experiment with the default parameters, choose “default template” from the drop-down menu.</p>
-<section id="stock-bottles">
-<h2>Stock Bottles<a class="headerlink" href="#stock-bottles" title="Link to this heading">#</a></h2>
-<p>Install the growth medium bottles with aseptic technique. It is crucial to be aware of airflow and maintain sterility during this process. Consider your hands as potential contamination sources - imagine they are covered in glitter that you don’t want to enter the bottle.</p>
+  <section id="experiment-setup-guide">
+<h1>Experiment Setup Guide<a class="headerlink" href="#experiment-setup-guide" title="Link to this heading">#</a></h1>
+<section id="initial-setup">
+<h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Select an existing experiment or create a new one in the ‘Experiment’ tab.</p></li>
+<li><p>Creating a new experiment will duplicate the parameters of the current experiment.</p></li>
+<li><p>To start a new experiment with default parameters, choose “default template” from the drop-down menu.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="stock-bottles-preparation">
+<h2>Stock Bottles Preparation<a class="headerlink" href="#stock-bottles-preparation" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Use aseptic technique to maintain sterility.</p></li>
+<li><p>Be mindful of airflow to avoid contamination.</p></li>
+<li><p>Consider your hands as potential contamination sources; imagine they are covered in glitter you don’t want in the bottle.</p></li>
+</ul>
+</div></blockquote>
 </section>
 <section id="priming-the-tubing">
 <h2>Priming the Tubing<a class="headerlink" href="#priming-the-tubing" title="Link to this heading">#</a></h2>
-<p>Next, prime the tubing with the growth medium. Go to the ‘Device’ tab and pump medium through the tubing until it reaches the needle. Avoid pumping drug into the vial during this step! If you accidentally pump more than a few drops of the drug medium while priming, slightly tilt the vial and use the waste pump to eliminate all the medium from the vial. Use a magnet to position the stirrer bar near the waste needle and pump out every remaining drop.</p>
-</section>
-<section id="filling-the-vials">
-<h2>Filling the Vials<a class="headerlink" href="#filling-the-vials" title="Link to this heading">#</a></h2>
-<p>Once the tubing is primed, each vial should be filled with 15mL of fresh growth medium. While the tubing is filling, ensure there are no leaks. The medium should be directed into only one vial, and the other lines should remain drip-free.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Go to the ‘Device’ tab.</p></li>
+<li><p>Pump medium through the tubing until it reaches the needle.</p></li>
+<li><p>Start with Pump2 Vial7 - prime the drug tubing while the vial is still empty.</p></li>
+<li><p>If drug is pumped through the needle during priming, tilt the vial and use the waste pump to eliminate all medium from the vial.</p></li>
+<li><p>Use a magnet to position the stirrer bar near the waste needle and pump out every remaining drop.</p></li>
+<li><p>When vial7 is primed, move on to Pump2 Vial6 and so on. For the remaining vials approximately 0.25mL should be pumped to fill the tube segment that passes through the valve.</p></li>
+<li><p>For priming Pump1 tubing, also start with Vial 7. First pump medium until it reaches the tip of the needle (about 4mL). Then, pump medium into the vial until it reaches the tip of the waste needle (~12mL). Record the pumped volume - this is the vial volume.</p></li>
+<li><p>For the remaining vials, pump vial_volume + 0.25mL to fill the vial and tubing segment that passes through the valve.</p></li>
+<li><p>Check for leaks and ensure that the tubing is properly connected in the process.</p></li>
+</ul>
+</div></blockquote>
 </section>
 <section id="setting-up-experiment-parameters">
 <h2>Setting Up Experiment Parameters<a class="headerlink" href="#setting-up-experiment-parameters" title="Link to this heading">#</a></h2>
-<p>After setting up the physical components, it’s time to configure the experiment.</p>
-<p>Refer to the <a class="reference internal" href="culture_parameters.html"><span class="doc">Parameters Overview</span></a> for detailed instructions on setting up the parameters for each culture.</p>
-<p>Examples:</p>
-<blockquote>
-<div><ul>
-<li><dl class="simple">
-<dt>no dilutions at all:</dt><dd><p>Relevant parameters:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">od_threshold</span></code>: 100 (very high, so it will never trigger a dilution)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">od_threshold_first_dilution</span></code>: 100 (very high, so it will never trigger a dilution)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stress_decrease_delay_hrs</span></code>: 2400 (100 days, more than the expected experiment duration))</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl class="simple">
-<dt>dilute every 24 hours with clean medium</dt><dd><p>Relevant parameters:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">od_threshold</span></code>: 100 (very high, so it will never trigger a dilution for increasing the stress)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">od_threshold_first_dilution</span></code>: 100 (very high, so it will never trigger a dilution)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stress_decrease_delay_hrs</span></code>: 24 (this parameter will trigger a dilution to decrease the stress (or keep it at 0) every 24 hours)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stress_decrease_tdoubling_min_hrs</span></code>: 0.1 (almost always consider culture as ‘not healthy’. If the growth rate noise is ~0.1, this value should be below ln(2)/0.1 = 6.9 hours)</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-<li><dl>
-<dt>when OD reaches 0.4, set the drug concentration at 30. Then, dilute when OD&gt;0.3, increase stress every 3 generations as long as the doubling time is &lt;4h. If OD&lt;0.3 for more than 16 hours and the current doubling time is &gt;24h - decrease the drug concentration.</dt><dd><p>Relevant parameters:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">od_threshold</span></code>: 0.3 (this parameter will trigger a dilution to increase the stress when the OD reaches 0.3)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">od_threshold_first_dilution</span></code>: 0.3 (this parameter will trigger the first dilution to set the stress when the OD reaches 0.3)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stress_increase_delay_generations</span></code>: 3</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stress_dose_first_dilution</span></code>: 30</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stress_decrease_delay_hrs</span></code>: 16</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">stress_decrease_tdoubling_min_hrs</span></code>: 24</p></li>
+<li><p>Go to the ‘Prediction’ tab.</p></li>
+<li><p>Set the parameters for the experiment.</p></li>
+<li><p>Check predicted plots to ensure the experiment is set up correctly.</p></li>
+<li><p>Refer to the <a class="reference internal" href="culture_parameters.html"><span class="doc">Culture Control Parameters</span></a> for a detailed explanation of each parameter</p></li>
 </ul>
 </div></blockquote>
-</dd>
-</dl>
-</li>
+</section>
+<section id="starting-the-experiment">
+<h2>Starting the Experiment<a class="headerlink" href="#starting-the-experiment" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Go to the ‘Experiment’ tab.</p></li>
+<li><p>Click the ‘Start’ button.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="monitoring-the-experiment">
+<h2>Monitoring the Experiment<a class="headerlink" href="#monitoring-the-experiment" title="Link to this heading">#</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Check the ‘Experiment’ tab for the current status of the experiment and the latest data.</p></li>
+<li><p>Update parameters in ‘Prediction’ tab if necessary</p></li>
+<li><p>Check the ‘Status’ tab for a photo of the device to check for leaks, biofilm formation, or other issues.</p></li>
 </ul>
 </div></blockquote>
 </section>
@@ -387,7 +399,7 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -404,7 +416,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Parameters Overview</p>
+        <p class="prev-next-title">Culture Control Parameters</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -424,10 +436,12 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stock-bottles">Stock Bottles</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-setup">Initial Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stock-bottles-preparation">Stock Bottles Preparation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#priming-the-tubing">Priming the Tubing</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filling-the-vials">Filling the Vials</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-experiment-parameters">Setting Up Experiment Parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#starting-the-experiment">Starting the Experiment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monitoring-the-experiment">Monitoring the Experiment</a></li>
 </ul>
   </nav></div>
 
@@ -476,8 +490,8 @@ By Catalin Rusnac
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

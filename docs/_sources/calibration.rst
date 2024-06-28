@@ -42,7 +42,7 @@ OD Sensor Calibration
 ---------------------
 OD sensors measure culture density by quantifying the amount of light that passes through the culture. The sensors use a photodiode to measure the light intensity, which is then converted to an optical density (OD) value. The OD value is a measure of the culture's turbidity, or the amount of light that is absorbed or scattered by the culture. The OD value is directly proportional to the culture's cell density, making it a useful metric for monitoring cell growth.
 
-.. note:: If OD probes are not provided, you can calibrate the OD sensors using probes made of paper or translucent plastic. To create a probe, follow these steps:
+**Creating OD calibration probes**
 
     1. Insert a sheet of translucent material (e.g. paper) in the OD sensor, about 3mm from the photodiode. Use the vial clips to hold the paper in place.
     2. Measure the signal in one of the OD sensors.
@@ -54,10 +54,17 @@ OD sensors measure culture density by quantifying the amount of light that passe
 
 .. warning:: Cut the paper probes so they fit inside the device without bending at the edges near vial 1 and vial 7 - the paper has to be very close to the photodiode.
 
-For every probe:
+**Calibrating OD using calibration probes with known OD values**
 
-1. Insert the probe in front of the photodiode
-2. Insert the probe OD value in the text field near the green “Measure new probe” button
-3. Press the “Measure new probe” button. Watch how this affects the calibration curves for each OD sensor.
+    1. Insert the probe in front of the photodiodes, making sure it is close to the photodiode and the edges are not bent.
+    2. Type the probe OD value in the text field near the green “Measure new probe” button
+    3. Press the “Measure new probe” button. Watch how this affects the calibration curves for each OD sensor.
+
 
 .. tip:: You can edit and remove individual data points as well as entire rows.
+
+**Calibrating OD0**
+
+    At low OD small variations in glass shape lead to large changes in light refraction.
+
+    A few minutes after starting the experiment, when the signal stabilizes, but before inoculating, measure or remeasure the signal for OD=0. This will be the most accurate measure of OD=0 for this device.

@@ -1,77 +1,86 @@
-Parameters Overview
+Culture Control Parameters
 ===================
-Detailed description of parameters that affect the culture progression.
-
-For additional context see code: https://github.com/catalin-rusnac/replifactory_v7/blob/8f6c9f53e9cad99ae9882efa9e85b5c954117158/flask_app/experiment/culture.py#L330C9-L330C15
-
-
-.. tip::
-
-   :negative controls:
-
-   All cultures which are not inoculated act as negative controls with periodic dilutions of fresh medium. The period is determined by the `stress_decrease_delay_hrs` parameter and the amount of medium added is determined by the `volume_added` parameter.
-
-
+Parameters that control culture dilutions
 
 ``name``
 
-    The name of the culture. This might refer to the species of the organism, like *Escherichia coli* or *Saccharomyces cerevisiae*.
+    The name of the culture. Example: **E. coli** or **not inoculated**.
 
 ``description``
 
-    A description of the culture, for example, a strain designation like *MG1655* or *BY4741*.
+    A description of the culture. Example: **replicate 1** or **chemostat** or **turbidostat** or **morbidostat**.
 
-``volume_fixed``
+``volume_vial``
 
-    The fixed volume of the culture in milliliters (ml), typically 15 ml. This refers to the volume of the culture that remains in the vial, below the waste needle.
+    Volume of the vial in milliliters (ml). This is the liquid volume under the waste needle.
 
-``volume_added``
+``pump1_stock_drug_concentration``
 
-    The total media volume added to the culture at a dilution step, in milliliters (ml), typically 10 ml. This is the sum of the clean medium volume and drug medium volume.
+    Concentration of the drug in the pump 1 stock bottle. Typically this should be 0 - pump1 should contain drug-free medium
+    The unit of this parameter can be any unit of concentration (e.g., mg/L, Moles/L, mM, %, etc.). It is not specified but must be the same unit across all parameters involving drug dose.
 
-``od_threshold``
+``pump2_stock_drug_concentration``
 
-    The optical density (OD) threshold at which the culture gets diluted. This is a measure of how dense the culture is and is used to monitor the growth of the culture.
+    Concentration of the drug in the pump 2 stock bottle. This is the highest concentration that can be achieved in the culture.
+    The lowest nonzero concentration in the vial occurs when adding the smallest volume of pump 2 stock solution to the vial (limited by drop size ~0.05mL).
+    The MIC of the culture should be below this concentration (approximately 1/100 of the stock concentration).
 
-``od_threshold_first_dilution``
+``dose_initialization``
 
-    The optical density (OD) threshold for the culture to be diluted for the first time. This value is usually set higher than the standard OD threshold, allowing the culture to reach a higher density before the first dilution occurs.
+    Initial dose added to the culture immediately when the experiment starts. -1 to disable. If this value is set to a positive number, the culture will get diluted as soon as the experiment starts.
+    This is useful if you want to inoculate the culture into a vial with nonzero concentration of the drug.
 
-``stress_dose_first_dilution``
+``dilution_factor``
 
-    The resulting stress dose after the first dilution. This is the concentration of the stress-inducing agent in the culture after the 'volume_added' of the stock solutions is mixed with the 'volume_fixed' of the culture. The initial amount of drug required to reach this dose from the stock concentration (for example, 200 units) can be calculated using the formula:
+    Factor by which the population is reduced during dilution.
+    For example, if the vial volume is 12 ml and the dilution factor is 1.6, the maximum volume of the culture during a dilution is 12 ml * 1.6 = 19.2 ml.
+    A total volume of 7.2mL will be added at every dilution, but the ratio of pump1 and pump2 will be adjusted according to the stress increase parameters.
+    To achieve chemostat or turbidostat conditions with minimal variation in OD, set the dilution factor to a small value (e.g., 1.1).
+    Note that higher a higher dilution frequency limits the time window for OD-based growth rate estimation. With every dilution the valve has to open and close, and an additional fixed waste volume is pumped to fill the waste tubing with air.
 
-    .. math::
+``od_dilution_threshold``
 
-        V1 = (C2 * V2) / C1
+    OD at which dilution occurs. -1 to disable OD triggered dilutions. This is useful for running replifactory in turbidostat mode.
 
-    where:
+``delay_dilution_max_hours``
 
-    - C1 is the drug concentration in the stock bottle ('stock_concentration_drug'),
+    Maximum time delay between dilutions. -1 to disable time-triggered dilutions. To achieve a dilution exactly every 2h, set this parameter to 2 and od_diultion_threshold to -1.
 
-    - V1 is the volume of the solution to be added ('volume_added'),
+``dilution_number_first_drug_addition``
 
-    - C2 is the final concentration of the solution ('stress_dose_first_dilution'), and
+    Dilution number at which dose_first_drug_addition is added. -1 to disable drug addition.
+    The first initialization dilution is also counted; set this parameter to at least 2 if dose_initialization>0.
 
-    - V2 is the total volume of the solution after dilution ('volume_fixed' + 'volume_added').
+``dose_first_drug_addition``
 
-    For example, the fraction of the 10 ml 'volume_added' that should be the drug can be calculated as (50 units * 25 ml) / 200 units = 6.25 ml. Therefore, 6.25 ml of the drug should be added to 3.75 ml of the non-drug medium to reach the desired 'stress_dose_first_dilution' of 50 units. Make sure that this volume is high enough for pumping accurately. For example, if the stock concentration is 100 a vial dose below 1 will be difficult to achieve with high accuracy. The pumped volume should generally be above 0.1 ml.
+    Drug dose at first drug addition. -1 to disable drug addition.
+    The dose is added to the culture at the dilution number specified by 'dilution_number_first_drug_addition'.
 
-``stress_increase_delay_generations``
+``dose_increase_factor``
 
-    This parameter sets the number of generations the culture must grow between increases in stress dose. These generations are computed from the dilution coefficient. For instance, when 10ml is diluted into 15ml, the dilution coefficient is 25/15 or ~1.67. The number of generations is determined by taking the base-2 logarithm of this dilution coefficient, :math:`\log_2(1.67)` which is approximately 0.74. This indicates that about 0.74 generations (or doublings) are needed to offset this dilution, increasing the generation number by roughly 0.74 at each dilution. The stress dose is increased only at dilutions that occur X generations after the previous stress dose increase, where X is this parameter. If the dilution coefficient is 1.67, the stress increase factor will be (1.67+1)/2 or ~1.335. While this stress increase factor remains consistent at each stress increase dilution, its frequency can be controlled by adjusting this parameter.
+    Factor by which the dose is increased at stress increases. The new dose is calculated as: new_dose = old_dose * factor + amount.
 
-``stress_increase_tdoubling_max_hrs``
+``dose_increase_amount``
 
-    This is the maximum doubling time (in hours) for the culture, beyond which an increase in stress dose is allowed. If the culture exhibits slow growth (high doubling time), the stress dose does not change. For example, if this parameter is set to 4 hrs, the growth rate of the culture must exceed :math:`\ln(2)/4` (approximately 0.173) for the stress dose to increase.
+    Amount by which the dose is increased at stress increases. The new dose is calculated as: new_dose = old_dose * factor + amount.
 
-``stress_decrease_delay_hrs``
+``threshold_od_min_increase_stress``
 
-    The time interval between dilutions if the OD does not reach the threshold. Acts as dilution period for negative control vials (which are not inoculated). This is the waiting period (in hours) before the stress dose is decreased if the culture does not reach the OD threshold.
+    Minimum OD for stress increase to be allowed. Useful to prevent stress increases if the culture is not growing.
 
-``stress_decrease_tdoubling_min_hrs``
+``threshold_growth_rate_increase_stress``
 
-    This parameter sets the minimum culture doubling time (in hours) that must be exceeded to allow a decrease in stress dose. If the doubling time is less than this value, the culture is deemed to be in good health, and there is no need to decrease the stress dose. For example, if this parameter is set to 24 hrs, the growth rate of the culture must be less than :math:`\ln(2)/24` (approximately 0.029) for the stress dose to decrease or for a negative control vial dilution to occur. Make sure that the noise in the growth rate measurement of negative control vials is less than this value.
+    Minimum growth rate for stress increase to be allowed. Useful to prevent stress increases if the culture is not growing.
+
+``threshold_growth_rate_decrease_stress``
+
+    If growth rate is below this value, stress is decreased by making one default dilution with pump1 only,
+    lowering the drug concentration by 'dilution_factor'. Period of consecutive stress decreases is controlled by 'delay_dilution_max_hours'.
+
+``delay_stress_increase_min_generations``
+
+    Minimum number of generations between stress increases. Useful to throttle the stress increase frequency.
+
 
 
 Growth Rate and Doubling Time
