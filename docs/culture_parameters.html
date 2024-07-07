@@ -379,13 +379,14 @@ If enabled, this dose should be at least 1% of the pump2_stock_drug_concentratio
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">dose_increase_factor</span></code></p>
 <blockquote>
-<div><p>Factor by which the dose is increased at stress increases. The new dose is calculated as: new_dose = old_dose * factor + amount.</p>
+<div><p>Factor by which the dose is increased at stress increases. The new dose is calculated as: new_dose = old_dose * factor + amount.
+This parameter allows for a proportional increase in the drug dose based on the current dose.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">dose_increase_amount</span></code></p>
 <blockquote>
 <div><p>Amount by which the dose is increased at stress increases. The new dose is calculated as: new_dose = old_dose * factor + amount.
-This parameter is useful to increase the drug dose by a fixed amount, regardless of the current dose.
-If the current dose is much below 1% of the pump2_stock_drug_concentration, set this parameter to about 1% of the pump2_stock_drug_concentration.</p>
+This parameter ensures that the drug dose increases by a specified amount regardless of the current dose.
+It is particularly useful when the current dose is significantly lower than 1% of the pump2_stock_drug_concentration.</p>
 </div></blockquote>
 <p><code class="docutils literal notranslate"><span class="pre">threshold_od_min_increase_stress</span></code></p>
 <blockquote>
