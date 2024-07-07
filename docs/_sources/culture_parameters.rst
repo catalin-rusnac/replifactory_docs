@@ -22,13 +22,15 @@ Parameters that control culture dilutions
 ``pump2_stock_drug_concentration``
 
     Concentration of the drug in the pump 2 stock bottle. This is the highest concentration that can be achieved in the culture.
-    The lowest nonzero concentration in the vial occurs when adding the smallest volume of pump 2 stock solution to the vial (limited by drop size ~0.05mL).
-    The MIC of the culture should be below this concentration (approximately 1/100 of the stock concentration).
+    The lowest nonzero concentration in the vial occurs when adding the smallest injectable volume of drug to the vial (limited by drop size ~0.05mL).
+    The minimum inhibitory concentration of the culture should not be below the smallest injectable concentration (~1% of the stock concentration).
+    The stock drug concentration should be at least the desired minimum inhibitory concentration (after adaptation)
 
 ``dose_initialization``
 
     Initial dose added to the culture immediately when the experiment starts. -1 to disable. If this value is set to a positive number, the culture will get diluted as soon as the experiment starts.
     This is useful if you want to inoculate the culture into a vial with nonzero concentration of the drug.
+    If enabled, this dose should be at least 1% of the pump2_stock_drug_concentration to ensure that at least a small droplet of the drug is added.
 
 ``dilution_factor``
 
@@ -55,6 +57,7 @@ Parameters that control culture dilutions
 
     Drug dose at first drug addition. -1 to disable drug addition.
     The dose is added to the culture at the dilution number specified by 'dilution_number_first_drug_addition'.
+    If enabled, this dose should be at least 1% of the pump2_stock_drug_concentration to ensure that at least a small droplet of the drug is added.
 
 ``dose_increase_factor``
 
@@ -63,6 +66,8 @@ Parameters that control culture dilutions
 ``dose_increase_amount``
 
     Amount by which the dose is increased at stress increases. The new dose is calculated as: new_dose = old_dose * factor + amount.
+    This parameter is useful to increase the drug dose by a fixed amount, regardless of the current dose.
+    If the current dose is much below 1% of the pump2_stock_drug_concentration, set this parameter to about 1% of the pump2_stock_drug_concentration.
 
 ``threshold_od_min_increase_stress``
 
