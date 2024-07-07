@@ -62,12 +62,14 @@ Parameters that control culture dilutions
 ``dose_increase_factor``
 
     Factor by which the dose is increased at stress increases. The new dose is calculated as: new_dose = old_dose * factor + amount.
+    This parameter allows for a proportional increase in the drug dose based on the current dose.
+
 
 ``dose_increase_amount``
 
     Amount by which the dose is increased at stress increases. The new dose is calculated as: new_dose = old_dose * factor + amount.
-    This parameter is useful to increase the drug dose by a fixed amount, regardless of the current dose.
-    If the current dose is much below 1% of the pump2_stock_drug_concentration, set this parameter to about 1% of the pump2_stock_drug_concentration.
+    This parameter ensures that the drug dose increases by a specified amount regardless of the current dose.
+    It is particularly useful when the current dose is significantly lower than 1% of the pump2_stock_drug_concentration.
 
 ``threshold_od_min_increase_stress``
 
