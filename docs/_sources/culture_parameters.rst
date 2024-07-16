@@ -38,7 +38,9 @@ Parameters that control culture dilutions
     For example, if the vial volume is 12 ml and the dilution factor is 1.6, the maximum volume of the culture during a dilution is 12 ml * 1.6 = 19.2 ml.
     A total volume of 7.2mL will be added at every dilution, but the ratio of pump1 and pump2 will be adjusted according to the stress increase parameters.
     To achieve chemostat or turbidostat conditions with minimal variation in OD, set the dilution factor to a small value (e.g., 1.1).
-    Note that higher a higher dilution frequency limits the time window for OD-based growth rate estimation. With every dilution the valve has to open and close, and an additional fixed waste volume is pumped to fill the waste tubing with air.
+    Note that a higher dilution frequency limits the time window for OD-based growth rate estimation.
+    A smaller dilution factor requires more device operations per generation. With every dilution the valve has to open and close, and an additional fixed waste volume is pumped to fill the waste tubing with air.
+
 
 ``od_dilution_threshold``
 
@@ -88,6 +90,16 @@ Parameters that control culture dilutions
 
     Minimum number of generations between stress increases. Useful to throttle the stress increase frequency.
 
+``postfill``
+
+    Whether to fill up the vial after dilution (1 or 0). Modifies the order of pump operations in a dilution.
+
+    When postill is disabled, media is first added to the vial, then excess is pumped to the waste bottle.
+    When postfill is enabled, excess media is first pumped to the waste bottle, then the vial is filled up.
+
+    Useful for high dilution factors.
+
+    For example, for a 1:15 dilution factor, elongate the waste needle so the dead volume is 1mL, set volume_vial to 1, dilution factor to 15 and postfill to 1.
 
 
 Growth Rate and Doubling Time
